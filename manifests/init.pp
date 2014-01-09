@@ -25,6 +25,7 @@ class vim {
   package { 'docutils':
     ensure   => installed,
     provider => pip,
+    install_options => [ { 'PATH' => "${boxen::config::home}/homebrew/bin:$PATH" } ]
   }
 
   file { [$vimdir,
